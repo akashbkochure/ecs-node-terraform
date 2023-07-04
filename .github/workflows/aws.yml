@@ -37,12 +37,8 @@ jobs:
           ECR_REPOSITORY: "app_repo"
           IMAGE_TAG: latest
         run: |
-          docker build -t app_repo .
-          docker tag app_repo:latest 375736852765.dkr.ecr.us-east-2.amazonaws.com/app_repo:latest
-          docker push 375736852765.dkr.ecr.us-east-2.amazonaws.com/app_repo:latest
-          
-          
-          
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def-1
