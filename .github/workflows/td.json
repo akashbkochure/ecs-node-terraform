@@ -1,0 +1,59 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:us-east-2:375736852765:task-definition/app:2",
+    "containerDefinitions": [
+        {
+            "name": "app",
+            "image": "375736852765.dkr.ecr.us-east-2.amazonaws.com/app_repo",
+            "cpu": 256,
+            "memory": 512,
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": []
+        }
+    ],
+    "family": "app",
+    "taskRoleArn": "arn:aws:iam::375736852765:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::375736852765:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 2,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512",
+    "registeredAt": "2023-07-04T13:59:51.927Z",
+    "registeredBy": "arn:aws:iam::375736852765:user/akash",
+    "tags": []
+}
