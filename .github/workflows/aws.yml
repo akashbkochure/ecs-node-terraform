@@ -37,11 +37,12 @@ jobs:
           ECR_REPOSITORY: "app_repo"
           IMAGE_TAG: latest
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          echo "ECR_REGISTRY=$ECR_REGISTRY" >> $GITHUB_ENV
-          echo "ECR_REPOSITORY=$ECR_REPOSITORY" >> $GITHUB_ENV
-          echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
+          docker build -t app_repo .
+          docker tag app_repo:latest 375736852765.dkr.ecr.us-east-2.amazonaws.com/app_repo:latest
+          docker push 375736852765.dkr.ecr.us-east-2.amazonaws.com/app_repo:latest
+          
+          
+          
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def-1
