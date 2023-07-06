@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-2:375736852765:task-definition/app:2",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-2:***:task-definition/app:2",
     "containerDefinitions": [
         {
             "name": "app",
-            "image": "375736852765.dkr.ecr.us-east-2.amazonaws.com/app_repo",
+            "image": "***.dkr.ecr.us-east-2.amazonaws.com/app_repo",
             "cpu": 256,
             "memory": 512,
             "portMappings": [
@@ -20,8 +20,8 @@
         }
     ],
     "family": "app",
-    "taskRoleArn": "arn:aws:iam::375736852765:role/ecsTaskExecutionRole",
-    "executionRoleArn": "arn:aws:iam::375736852765:role/ecsTaskExecutionRole",
+    "taskRoleArn": "arn:aws:iam::***:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::***:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "revision": 2,
     "volumes": [],
@@ -54,6 +54,6 @@
     "cpu": "256",
     "memory": "512",
     "registeredAt": "2023-07-04T13:59:51.927Z",
-    "registeredBy": "arn:aws:iam::375736852765:user/akash",
+    "registeredBy": "arn:aws:iam::***:user/akash",
     "tags": []
 }
